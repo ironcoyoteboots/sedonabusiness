@@ -1,29 +1,35 @@
-// src/lib/email.ts
 import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 type Mail = {
   to: string | string[];
   subject: string;
-  html: string;        // ← make html required to avoid template overload
+  html: string;
   text?: string;
   replyTo?: string;
   from?: string;
 };
 
 export async function sendMail({ to, subject, html, text, replyTo, from }: Mail) {
-  const sender = from || "Sedona Business Help <onboarding@resend.dev>";
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) throw new Error("RESEND_API_KEY not set");
 
-  const options = {
+  const resend = new Resend(apiKey);
+  const sender = from || "Sedona Business Help <support@sedonabusiness.help>";
+
+  const result = await resend.emails.send({
     from: sender,
     to,
     subject,
-    html,                      // guaranteed present
-    ...(text ? { text } : {}), // only include if defined
+    html,
+    ...(text ? { text } : {}),
     ...(replyTo ? { replyTo } : {}),
-  };
+  });
 
-  const { error } = await resend.emails.send(options);
-  if (error) throw new Error(error.message || "Resend send failed");
+  if (result.error) {
+    // include details if present (super helpful)
+    const details = (result as any).error?.details
+      ? ` | details: ${JSON.stringify((result as any).error.details)}`
+      : "";
+    throw new Error(`Resend: ${result.error.message}${details}`);
+  }
 }
