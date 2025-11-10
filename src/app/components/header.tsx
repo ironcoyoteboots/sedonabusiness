@@ -20,7 +20,7 @@ export default function Header() {
           </Link>
 
           <nav className="flex gap-6 text-sm font-medium">
-            <Link href="/#services" className="hover:text-orange-600 transition">
+            <Link href="/services" className="hover:text-orange-600 transition">
               Services
             </Link>
             <Link href="/connect" className="hover:text-orange-600 transition">

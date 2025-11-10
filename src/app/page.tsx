@@ -53,8 +53,8 @@ export default function Home() {
               </h1>
               <div className="bg-black/40 rounded-2xl p-4 inline-block mt-15">
                 <p className="text-gray-100 text-lg md:text-2xl">
-                  Websites, Marketing, Social Media, Accounting and more.<br />
-                  All from local volunteers who want your business to succeed and grow.
+                  Websites, Marketing, Social Media, Accounting and more.
+                <br /> A community project funded and run by local volunteers who want your business to succeed and grow.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
@@ -65,7 +65,7 @@ export default function Home() {
                   Get Help
                 </Link>
                 <Link
-                  href="#services"
+                  href="/services"
                   className="border border-white text-white font-semibold px-5 md:px-6 py-2.5 md:py-3 rounded-full hover:bg-white/10 text-sm md:text-lg"
                 >
                   Services
@@ -91,19 +91,23 @@ export default function Home() {
 
         {/* --- Services --- */}
         <section id="services">
+
           <div className="grid gap-6 md:grid-cols-3 items-stretch mt-8">
-            {/* Tech & Tools */}
+
+
+            {/* Retail & Product Setup */}
             <div className="group border border-gray-200 rounded-2xl p-6 bg-white flex flex-col justify-between h-full transition-all duration-200 hover:border-orange-500 hover:-translate-y-1 hover:shadow-md">
               <div>
                 <h3 className="text-lg font-semibold text-gray-500 transition-colors duration-200 group-hover:text-orange-600 text-center">
-                  Tech & Tools
+                  Retail & Product Setup
                 </h3>
-                <Monitor className="w-12 h-12 mx-auto text-orange-500 mb-4 mt-4 transition-transform duration-200 group-hover:scale-110" />
+                <ShoppingBag className="w-12 h-12 mx-auto text-orange-500 mb-4 mt-4 transition-transform duration-200 group-hover:scale-110" />
                 <p className="mt-3 text-gray-700 text-base">
-                  Websites, email setup, domains, online booking, payments, and automation tools — everything to keep your business running smoothly.
+                  Support for boutiques and makers setting up inventory, point-of-sale systems, or selling online through Square, Etsy, or Shopify.
                 </p>
               </div>
             </div>
+            
 
             {/* Marketing & Social Media */}
             <div className="group border border-gray-200 rounded-2xl p-6 bg-white flex flex-col justify-between h-full transition-all duration-200 hover:border-orange-500 hover:-translate-y-1 hover:shadow-md">
@@ -183,15 +187,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Retail & Product Setup */}
+            {/* Tech & Tools */}
             <div className="group border border-gray-200 rounded-2xl p-6 bg-white flex flex-col justify-between h-full transition-all duration-200 hover:border-orange-500 hover:-translate-y-1 hover:shadow-md">
               <div>
                 <h3 className="text-lg font-semibold text-gray-500 transition-colors duration-200 group-hover:text-orange-600 text-center">
-                  Retail & Product Setup
+                  Tech & Tools
                 </h3>
-                <ShoppingBag className="w-12 h-12 mx-auto text-orange-500 mb-4 mt-4 transition-transform duration-200 group-hover:scale-110" />
+                <Monitor className="w-12 h-12 mx-auto text-orange-500 mb-4 mt-4 transition-transform duration-200 group-hover:scale-110" />
                 <p className="mt-3 text-gray-700 text-base">
-                  Support for boutiques and makers setting up inventory, point-of-sale systems, or selling online through Square, Etsy, or Shopify.
+                  Websites, email setup, domains, online booking, payments, and automation tools — everything to keep your business running smoothly.
                 </p>
               </div>
             </div>
@@ -229,12 +233,14 @@ export default function Home() {
             >
               Let’s talk
             </Link>
+            <Link
+              href="/services"
+              className="inline-block text-orange-600 hover:text-orange-700 border-orange-600 hover:border-orange-700 font-semibold px-6 py-3 rounded-full text-lg transition-colors border  ml-6"
+            >
+              Learn More
+            </Link>
           </div>
         </section>
-
-
-
-
       </main>
     </>
   );
