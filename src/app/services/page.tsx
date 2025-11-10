@@ -13,10 +13,11 @@ import {
     Settings,
     Calendar
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 type Category = {
     title: string;
-    Icon: React.ComponentType<any>;
+    Icon: LucideIcon;
     blurb: string;
     details: string[];
     how: string[];
