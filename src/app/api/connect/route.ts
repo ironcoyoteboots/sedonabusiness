@@ -14,7 +14,7 @@ type Payload = {
 };
 
 function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (m) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;" }[m]!));
+  return s.replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[m]!));
 }
 
 export async function POST(req: Request) {
@@ -52,11 +52,10 @@ ${body.details || "-"}
         <p><strong>Business:</strong> ${escapeHtml(body.businessName!)}</p>
         <p><strong>Email:</strong> ${escapeHtml(body.email!)}</p>
         <p><strong>Phone:</strong> ${escapeHtml(body.phone || "-")}</p>
-        <p><strong>Services:</strong><br/>${
-          (body.services?.length
-            ? `<ul>${body.services.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>`
-            : "– (no services selected)")
-        }</p>
+        <p><strong>Services:</strong><br/>${(body.services?.length
+        ? `<ul>${body.services.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>`
+        : "– (no services selected)")
+      }</p>
         <p><strong>Details:</strong><br/>${escapeHtml(body.details || "-")}</p>
       </div>
     `;
@@ -70,8 +69,9 @@ ${body.details || "-"}
     });
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    console.error("connect POST error", err);
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("connect POST error", msg);
     return NextResponse.json({ error: "Email send failed" }, { status: 500 });
   }
 }
