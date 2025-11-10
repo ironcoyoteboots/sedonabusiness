@@ -203,18 +203,19 @@ export default function ServicesPage() {
                             key={title}
                             className="border border-gray-200 rounded-2xl bg-white p-6 hover:shadow-sm transition"
                         >
-                            <div className="flex items-start gap-6">
-                                {/* LEFT: icon + title */}
-                                <div className="w-40 shrink-0">
-                                    <h3 className="mt-3 text-lg font-semibold text-gray-800">
+                            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                                {/* LEFT: icon + title (centered), narrower on small screens */}
+                                <div className="w-24 sm:w-32 md:w-40 shrink-0 flex flex-col items-center text-center">
+                                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600" />
+                                    <h3 className="mt-2 text-base sm:text-lg font-semibold text-gray-800 leading-snug">
                                         {title}
                                     </h3>
-                                    <Icon className="w-10 h-10 text-orange-600 mt-3 ml-3" />
                                 </div>
 
                                 {/* RIGHT: blurb + details bullets */}
                                 <div className="flex-1">
                                     <p className="text-gray-700">{blurb}</p>
+
                                     {details?.length > 0 && (
                                         <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
                                             {details.map((d) => (
@@ -222,13 +223,16 @@ export default function ServicesPage() {
                                             ))}
                                         </ul>
                                     )}
-                                    <h4 className="mt-3 text-lg font-semibold text-gray-800">How?</h4>
+
                                     {how?.length > 0 && (
-                                        <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                                            {how.map((d) => (
-                                                <li key={d}>{d}</li>
-                                            ))}
-                                        </ul>
+                                        <>
+                                            <h4 className="mt-4 text-lg font-semibold text-gray-800">How?</h4>
+                                            <ul className="mt-2 list-disc pl-5 text-gray-700 space-y-1">
+                                                {how.map((d) => (
+                                                    <li key={d}>{d}</li>
+                                                ))}
+                                            </ul>
+                                        </>
                                     )}
                                 </div>
                             </div>
@@ -236,6 +240,7 @@ export default function ServicesPage() {
                     ))}
                 </div>
             </section>
+
 
             {/* How it works */}
             <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">

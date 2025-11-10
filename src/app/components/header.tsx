@@ -13,7 +13,7 @@ export default function Header() {
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
         <div className="container flex items-center justify-between h-16">
-          <Link href="/" className="group text-2xl font-bold tracking-tight">
+          <Link href="/" className="group text-xl sm:text-2xl font-bold tracking-tight">
             <span className="text-gray-500 group-hover:text-gray-400">Sedona</span>
             <span className="text-orange-600 group-hover:text-orange-400">Business</span>
             <span className="text-gray-500 group-hover:text-gray-400">Help</span>
