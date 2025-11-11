@@ -36,7 +36,9 @@ const categories: Category[] = [
             "Shipping, pickup, and returns flow",
         ],
         how: [
-            "Find people in similar inducstry, such as resturants setting up online menus"
+            "Connect with local owners in similar industries (e.g., restaurants with online menus) to share setup tips.",
+            "Pair with a volunteer for Square/Etsy/Shopify basics.",
+            "Create a simple checklist for SKUs, pickup, and returns."
         ]
     },
     {
@@ -51,8 +53,8 @@ const categories: Category[] = [
             "Collabs, flyers, and local partnerships",
         ],
         how: [
-            "Hire a local person to run campaigns and make creatives",
-            "Expert advises business and the marketing person ",
+            "Recruit a local marketer to run campaigns and produce creatives.",
+            "Pair them with an experienced volunteer advisor for strategy and feedback."
         ]
     },
     {
@@ -67,7 +69,8 @@ const categories: Category[] = [
             "Intro to local bookkeepers if needed",
         ],
         how: [
-            "Hire or seek volunteer for a few hours a month.",
+            "Hire or recruit a local bookkeeper/volunteer for a few hours each month.",
+            "Set up a simple monthly close checklist and folder system."
         ]
     },
     {
@@ -82,7 +85,8 @@ const categories: Category[] = [
             "Referrals to licensed pros",
         ],
         how: [
-            "Hire or seek volunteer for a few hours a month.",
+            "Refer to licensed attorneys and local legal clinics as needed.",
+            "Schedule a short Q&A to clarify formation, contracts, and compliance basics."
         ]
     },
     {
@@ -97,8 +101,8 @@ const categories: Category[] = [
             "Next 90-day priorities",
         ],
         how: [
-            "See local experts, retired business professors to donate time",
-            "Hire a local admin to schedule"
+            "Meet with local experts or retired business professors willing to donate time.",
+            "Have a local admin or volunteer coordinate scheduling and materials."
         ]
     },
     {
@@ -112,8 +116,8 @@ const categories: Category[] = [
             "Expansion planning",
         ],
         how: [
-            "See local experts, retired business professors to donate time",
-            "Hire a local admin to schedule"
+            "Meet with local experts or retired operators for practical guidance.",
+            "Use a lightweight cadence (weekly check-ins) and let an admin/volunteer help schedule."
         ]
     },
     {
@@ -128,7 +132,8 @@ const categories: Category[] = [
             "Reel/post templates you can reuse",
         ],
         how: [
-            "Hire a local designer for a few hours a month",
+            "Hire or match with a local designer for a few hours each month.",
+            "Run a short working session to assemble a mini brand kit (fonts, colors, logo use)."
         ]
     },
     {
@@ -141,12 +146,12 @@ const categories: Category[] = [
             "Email & domain (Google Workspace/Zoho) configuration",
             "Online booking and payments",
             "Basic automations (forms → email, receipts, reminders)",
-            "We can find people who have set up or used similiar systems to give you support."
+            "We can find people who have set up or used similar systems to give you support."
         ],
         how: [
-            "Hire local web developer for a few hours a month, seek volunteers",
-            "We can find people who have set up or used similiar systems to give support.",
-            "Find people in similar inducstry, such as resturants setting up online menus"
+            "Hire a local web developer for a few hours per month, or recruit volunteers.",
+            "Find people who have set up or used similar systems to share support.",
+            "Connect with owners in similar industries (e.g., restaurants setting up online menus)."
         ]
     },
     {
@@ -156,11 +161,12 @@ const categories: Category[] = [
             "Simplify the daily grind with smarter processes, communication, and workflows — saving time and reducing stress.",
         details: [
             "Review process and identify improvements",
-            "Team training on effeciency",
+            "Team training on efficiency",
             "Simple automations to cut busywork",
         ],
         how: [
-            "Seek local experts in process and workflows to donate their time",
+            "Connect with local process/workflow experts willing to donate time.",
+            "Do a short walkthrough to spot quick wins and set a simple improvement list."
         ]
     },
 ];
@@ -174,24 +180,25 @@ export default function ServicesPage() {
                     <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
                         Services We Can Provide
                     </h1>
-                    <p className="mt-2 text-gray-700 mt-5">
-                        Learn more about our services below, or just tap <span className="font-semibold">Get Help</span> and we’ll work it out together.
-                        <br />We can always seek out speciality help once we understand your needs.
-                    </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <div className="mt-2 text-sm text-gray-600">
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-800 font-medium">
+                            100% Free • Volunteer-run • No Selling
+                        </span>
+                    </div>
+                    <div className="mt-15 flex flex-wrap items-center gap-4">
                         <Link
                             href="/connect"
                             className="inline-flex items-center gap-2 rounded-full bg-orange-700 px-5 py-3 text-white font-semibold hover:bg-orange-600 transition"
                         >
                             <Calendar className="h-5 w-5" /> Get Help
                         </Link>
+                        <p className="text-gray-700">
+                            Learn more about our services below, or just tap <span className="font-semibold">Get Help</span> and we’ll work it out together.
+                            <br />We can always seek out speciality help once we understand your needs.
+                        </p>
                     </div>
 
-                    <div className="mt-4 text-sm text-gray-600">
-                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-800 font-medium">
-                            100% Free • Volunteer-run • we aren't selling anything
-                        </span>
-                    </div>
+
                 </div>
             </section>
 
@@ -206,10 +213,10 @@ export default function ServicesPage() {
                             <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                                 {/* LEFT: icon + title (centered), narrower on small screens */}
                                 <div className="w-24 sm:w-32 md:w-40 shrink-0 flex flex-col items-center text-center">
-                                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-orange-600" />
-                                    <h3 className="mt-2 text-base sm:text-lg font-semibold text-gray-800 leading-snug">
+                                    <h3 className=" text-base sm:text-lg font-semibold text-gray-800 leading-snug">
                                         {title}
                                     </h3>
+                                    <Icon className="mt-2 w-8 h-8 sm:w-10 sm:h-10 text-orange-600" />
                                 </div>
 
                                 {/* RIGHT: blurb + details bullets */}
@@ -250,15 +257,16 @@ export default function ServicesPage() {
                 <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                     {[
                         { title: "Tell us what you need", text: "What’s working? What’s stuck? We’ll make a short list together." },
-                        { title: "Pick simple tools", text: "Email, domain, booking, payments—whatever helps you move forward." },
+                        { title: "Get the resources", text: "We’ll help provide you with the local people, tools, or services that best fit your needs." },
                         { title: "Work side-by-side", text: "Often in person. We set things up with you and keep it easy." },
-                        { title: "Come back anytime", text: "It’s community support. No fees. No upsells. Just help." },
-                    ].map((s) => (
-                        <div key={s.title} className="rounded-2xl border border-gray-200 bg-white p-6">
-                            <h3 className="text-lg font-semibold text-gray-900">{s.title}</h3>
-                            <p className="mt-2 text-gray-700">{s.text}</p>
-                        </div>
-                    ))}
+                        { title: "Come back anytime", text: "It’s community supporting community. No fees. No upsells. Just help." },
+                    ]
+                        .map((s) => (
+                            <div key={s.title} className="rounded-2xl border border-gray-200 bg-white p-6">
+                                <h3 className="text-lg font-semibold text-gray-900">{s.title}</h3>
+                                <p className="mt-2 text-gray-700">{s.text}</p>
+                            </div>
+                        ))}
                 </div>
             </section>
 
