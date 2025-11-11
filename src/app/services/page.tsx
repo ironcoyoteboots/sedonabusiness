@@ -211,12 +211,12 @@ export default function ServicesPage() {
                             className="border border-gray-200 rounded-2xl bg-white p-6 hover:shadow-sm transition"
                         >
                             <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                                {/* LEFT: icon + title (centered), narrower on small screens */}
-                                <div className="w-24 sm:w-32 md:w-40 shrink-0 flex flex-col items-center text-center">
-                                    <h3 className=" text-base sm:text-lg font-semibold text-gray-800 leading-snug">
+                                {/* LEFT: icon + title */}
+                                <div className="w-full sm:w-32 md:w-40 shrink-0 flex flex-row sm:flex-col items-center sm:items-center text-left sm:text-center">
+                                    <h3 className="text-base sm:text-lg font-semibold text-gray-800 leading-snug flex-1">
                                         {title}
                                     </h3>
-                                    <Icon className="mt-2 w-8 h-8 sm:w-10 sm:h-10 text-orange-600" />
+                                    <Icon className="ml-3 sm:ml-0 w-6 h-6 sm:w-10 sm:h-10 text-orange-600 sm:mt-3" />
                                 </div>
 
                                 {/* RIGHT: blurb + details bullets */}
@@ -305,6 +305,6 @@ export default function ServicesPage() {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     );
 }
